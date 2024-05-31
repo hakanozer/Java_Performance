@@ -9,16 +9,20 @@ public class MainParalel {
         List<Product> ls = productResult.result(5000);
 
         long start = System.currentTimeMillis();
-        ls.stream().forEach(item -> {
+        ls.parallelStream().forEach(item -> {
             try {
                 Thread.sleep(20);
                 System.out.println(item);
             }catch (Exception ex) {}
          });
         long end = System.currentTimeMillis();
-        long between
-
+        long between = end - start;
+        System.out.println(between);
 
     }
 
 }
+
+
+// stream 115095
+// paralel stream 14671
